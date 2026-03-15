@@ -17,14 +17,13 @@ The project focuses on **security practices**, **modular architecture**, and **c
 ---
 
 ## App Photos 
-![app image](images/'Screenshot 2026-03-15 231748.png')
-![app image](images/'Screenshot 2026-03-15 231956.png')
-![app image](images/'Screenshot 2026-03-15 232007.png')
-![app image](images/'Screenshot 2026-03-15 232033.png')
-![app image](images/'Screenshot 2026-03-15 232043.png')
-![app image](images/'Screenshot 2026-03-15 232054.png')
-![app image](images/'Screenshot 2026-03-15 232116.png')
-![app image](images/'')
+![app image](images/Screenshot 2026-03-15 231748.png)
+![app image](images/Screenshot 2026-03-15 231956.png)
+![app image](images/Screenshot 2026-03-15 232007.png)
+![app image](images/Screenshot 2026-03-15 232033.png)
+![app image](images/Screenshot 2026-03-15 232043.png)
+![app image](images/Screenshot 2026-03-15 232054.png)
+![app image](images/Screenshot 2026-03-15 232116.png)
 
 ## Features
 
