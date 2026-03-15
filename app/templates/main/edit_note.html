@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-4">
+        <form action="" method="post" enctype="multipart/form-data">
+            {{ form.hidden_tag()}}
+            <div class="form-floating mb-3">
+                {{ form.title(class="form-control", id="floatingtitle", placeholder="Title") }}
+                {{ form.title.label(for="floatingtitle") }} 
+            </div>
+            <div class="form-floating mb-3">
+                {{ form.content(class="form-control", id="floatingcontent", placeholder="Content") }}
+                {{ form.content.label(for="floatingcontent") }}
+            </div>
+            <div class="form-floating mb-3">
+                {{ form.pic(class="form-control", id="floatingpic", placeholder="Picture") }}
+                {{ form.pic.label(for="floatingpic") }}
+            </div>
+            <br><br>
+            {{ form.submit(class="w-100 btn btn-lg btn-primary") }}
+            <p class="mt-5 mb-3 text-muted">&copy; {{ year }}</p>
+        </form>
+    </div>
+
+{% endblock %}

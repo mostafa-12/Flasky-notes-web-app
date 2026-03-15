@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="text-center mb-5">
+        <h1>Secure Notes</h1>
+        <p class="lead">
+            A multi-user secure notes application built with Flask.
+            Each user's notes are encrypted using keys derived from their own password.
+        </p>
+
+        <a href="{{ url_for('auth.login') }}" class="btn btn-primary btn-lg m-2">Login</a>
+        <a href="{{ url_for('auth.signup') }}" class="btn btn-outline-primary btn-lg m-2">Create Account</a>
+    </div>
+
+
+    <hr>
+
+
+    <h3 class="mt-4">Features</h3>
+
+    <ul>
+        <li>Multi-user authentication system</li>
+        <li>Email verification before account activation</li>
+        <li>Secure password hashing</li>
+        <li>Envelope encryption for notes</li>
+        <li>User-specific encryption keys derived from password</li>
+        <li>Image cover support for notes</li>
+        <li>Clean responsive UI</li>
+    </ul>
+
+
+    <hr>
+
+
+    <h3 class="mt-4">Technologies Used</h3>
+
+    <ul>
+        <li>Flask</li>
+        <li>Jinja templating engine</li>
+        <li>Flask-Login for authentication</li>
+        <li>Flask-SQLAlchemy for database ORM</li>
+        <li>Flask-Mailman for email verification</li>
+        <li>Cryptography library for encryption</li>
+        <li>Bcrypt for password hashing</li>
+    </ul>
+
+
+    <hr>
+
+
+    <h3 class="mt-4">Security Design</h3>
+
+    <p>
+        This project implements envelope encryption where each user's notes are encrypted
+        using a Data Encryption Key (DEK). The DEK itself is encrypted using a Key Encryption Key (KEK)
+        derived from the user's password through a key derivation function.
+    </p>
+
+    <p>
+        Passwords are securely hashed and never stored in plaintext.
+        User data is isolated and protected with multiple layers of security.
+    </p>
+    <h3>Source Code</h3>
+    <p>
+        This project is available on <a href="https://github.com/mostafa-12">GitHub</a> as a demonstration of secure Flask application design.
+    </p>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="card mx-auto" style="max-width: 90%;">
+
+        <img src="{{ url_for('static', filename='pics/' + note.cover_pic) }}"
+             class="card-img-top"
+             style="height:350px; object-fit:cover;">
+
+        <div class="card-body">
+
+            <h2 class="card-title mb-3">{{ note.title }}</h2>
+
+            <p class="card-text" style="white-space: pre-line;">
+                {{ note.content }}
+            </p>
+
+        </div>
+        <div class="d-flex flex-wrap justify-content-center">
+            <a href="{{ url_for('main.notes') }}" class="btn btn-secondary m-2">Back to Notes</a>
+            <a href="{{ url_for('main.edit_note', note_id=note.id) }}" class="btn btn-primary m-2">Edit Note</a>
+            <form action="{{ url_for('main.delete_note', note_id=note.id) }}" method="POST">
+                <button type="submit" class="btn btn-danger m-2">Delete Note</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

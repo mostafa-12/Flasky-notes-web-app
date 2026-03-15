@@ -1,0 +1,56 @@
+{% extends 'base.html' %}          
+{% block head %}
+  {{ super() }}
+  <link href="{{url_for('static', filename='css/signup.css')}}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+  {% for field in form.errors%}
+    {% for error in form.errors[field] %}
+      <div class="alert alert-danger" role="alert">
+        {{form[field].label}} : {{error}}
+      </div>
+    {% endfor %}
+  {% endfor %}
+  <main class="form-signin">
+    <form  method="POST", enctype="multipart/form-data">
+
+      {{ form.hidden_tag() }}
+      <img class="mb-4" src="https://imgs.search.brave.com/wPMzVzVovzKiDVeQJ_N-6iN8I3sVvh3-yMqkSP0ujzI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi8zLzNjL0Zs/YXNrX2xvZ28uc3Zn/LzI1MHB4LUZsYXNr/X2xvZ28uc3ZnLnBu/Zw" alt="" width="72" height="57">
+      <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
+
+      <div class="mb-3">
+        {{form.pic(class="form-control", id="formFile")}}
+        {{form.pic.label(for="formFile")}}
+      </div>
+      <div class="form-floating">
+        
+        {{form.username(class="form-control", id="floatingusername", placeholder="name@example.com")}}
+        {{form.username.label(for="floatingusername")}}
+      </div>
+      <div class="form-floating">
+        {{form.email(class="form-control", id="floatingemail", placeholder="name@example.com")}}
+        {{form.email.label(for="floatingemail")}}
+      </div>
+      <div class="form-floating">
+        {{form.password(class="form-control", id="floatingPassword", placeholder="Password")}}
+        {{form.password.label(for="floatingPassword")}}
+      </div>
+      <div class="form-floating">
+        {{form.re_password(class="form-control", id="floatingRePassword", placeholder="Password")}}
+        {{form.re_password.label(for="floatingRePassword")}}
+      </div>
+
+      <div class="checkbox mb-3">
+        <label>
+          {{form.remember_me()}}
+          {{form.remember_me.label}}
+        </label>
+      </div>
+      {{form.submit(class="w-100 btn btn-lg btn-primary")}}
+      <p class="mt-5 mb-3 text-muted">&copy; {{year}}</p>
+    </form>
+
+</main>
+
+{% endblock %}    
