@@ -16,6 +16,16 @@ The project focuses on **security practices**, **modular architecture**, and **c
 
 ---
 
+## App Photos
+
+![app image](images/Screenshot%202026-03-15%20231748.png)
+![app image](images/Screenshot%202026-03-15%20231956.png)
+![app image](images/Screenshot%202026-03-15%20232007.png)
+![app image](images/Screenshot%202026-03-15%20232033.png)
+![app image](images/Screenshot%202026-03-15%20232043.png)
+![app image](images/Screenshot%202026-03-15%20232054.png)
+![app image](images/Screenshot%202026-03-15%20232116.png)
+
 ## Features
 
 * Multi-user authentication system
@@ -38,6 +48,8 @@ The application uses an **Envelope Encryption model**:
 2. The DEK itself is encrypted using a **Key Encryption Key (KEK)**.
 3. The KEK is derived from the user's password using a **Key Derivation Function (KDF)**.
 4. User passwords are securely hashed and never stored in plaintext.
+
+![image show proccess of create and get DEK](images/18fec929-c885-47ca-87bc-23785be1bf5c.png)
 
 This ensures:
 
@@ -63,7 +75,7 @@ This ensures:
 ## Project Structure
 
 The project follows a **modular Flask architecture**:
-
+```
 app/
 │
 ├── auth/           # Authentication routes and forms
@@ -74,10 +86,11 @@ app/
 ├── static/         # CSS, images, and uploaded files
 │
 └── extensions.py   # Flask extensions initialization
-
+```
 ---
 
 ---
+```
 app/
 │
 ├── auth/
@@ -102,6 +115,7 @@ app/
 │
 ├── extensions.py
 └── __init__.py
+```
 ---
 ## Example Use Cases
 
@@ -111,6 +125,24 @@ app/
 * Portfolio project for backend development
 
 ---
+## How to use
+1- clone repo 
+2- into repo directory run next command
+```
+pip install -r requirements.text
+```
+3- in config.py put email and emaill's app password to use it to send email
+```
+    MAIL_USERNAME = ''
+    MAIL_PASSWORD = ''
+```
+4- then run command 
+```
+python run.py
+or
+flask run
+
+```
 
 ## Future Improvements
 
@@ -123,6 +155,6 @@ app/
 
 ## Author
 
-Mo
+Mostafa Ahmed (mostafa-12)
 
 Backend development learning project focused on Flask architecture and application security.
