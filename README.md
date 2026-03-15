@@ -63,7 +63,7 @@ This ensures:
 ## Project Structure
 
 The project follows a **modular Flask architecture**:
-
+```
 app/
 │
 ├── auth/           # Authentication routes and forms
@@ -74,7 +74,7 @@ app/
 ├── static/         # CSS, images, and uploaded files
 │
 └── extensions.py   # Flask extensions initialization
-
+```
 ---
 
 ---
