@@ -39,6 +39,8 @@ The application uses an **Envelope Encryption model**:
 3. The KEK is derived from the user's password using a **Key Derivation Function (KDF)**.
 4. User passwords are securely hashed and never stored in plaintext.
 
+![image show proccess of create and get DEK](images/18fec929-c885-47ca-87bc-23785be1bf5c.png)
+
 This ensures:
 
 * Encrypted note storage
@@ -113,6 +115,24 @@ app/
 * Portfolio project for backend development
 
 ---
+## How to use
+1- clone repo 
+2- into repo directory run next command
+```
+pip install -r requirements.text
+```
+3- in config.py put email and emaill's app password to use it to send email
+```
+    MAIL_USERNAME = ''
+    MAIL_PASSWORD = ''
+```
+4- then run command 
+```
+python run.py
+or
+flask run
+
+```
 
 ## Future Improvements
 
@@ -125,6 +145,6 @@ app/
 
 ## Author
 
-Mo
+Mostafa Ahmed (mostafa-12)
 
 Backend development learning project focused on Flask architecture and application security.
