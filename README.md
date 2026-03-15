@@ -78,6 +78,7 @@ app/
 ---
 
 ---
+```
 app/
 │
 ├── auth/
@@ -102,6 +103,7 @@ app/
 │
 ├── extensions.py
 └── __init__.py
+```
 ---
 ## Example Use Cases
 
