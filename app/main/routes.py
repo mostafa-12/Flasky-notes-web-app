@@ -8,6 +8,7 @@ from app.main import main
 
 
 @main.route("/")
+@main.route("/home")
 def home():
     return render_template("main/home.html", title="Home")
 
@@ -22,6 +23,8 @@ def profile():
         else:
             flash("Failed to update profile. Please try again.", "danger")
         return redirect(url_for("main.profile"))
+    form.username.data = current_user.username
+    form.email.data = current_user.email
     return render_template("main/profile.html", title="Profile", form=form)
 
 

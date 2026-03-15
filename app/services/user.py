@@ -56,7 +56,9 @@ def update_user(form : UpdateProfileForm):
     user = current_user
     user.username = form.username.data
     user.email = form.email.data
-    user.profile_pic = save_pics_secure(form)
+    pic = save_pics_secure(form)
+    
+    user.profile_pic = pic if pic else user.profile_pic
     try:
         db.session.add(user)
         db.session.commit()

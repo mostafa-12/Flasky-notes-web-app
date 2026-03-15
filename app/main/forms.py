@@ -1,3 +1,4 @@
+from flask_login import current_user
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, SubmitField, EmailField, ValidationError, TextAreaField
@@ -14,12 +15,12 @@ class UpdateProfileForm(FlaskForm):
 
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
-        if user and user.id != self.user_id:
+        if user and user.id != current_user.id:
             raise ValidationError('Username is already taken. Please choose a different one.')
     
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
-        if user and user.id != self.user_id:
+        if user and user.id != current_user.id:
             raise ValidationError('Email is already taken. Please choose a different one.')
         
     
